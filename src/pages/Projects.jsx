@@ -22,7 +22,7 @@ const projects = [
   {
     title: "Task Manager App",
     description: "A productivity app to manage tasks efficiently.",
-    link: "https://Silulami-Mayaphi.github.io/task-manager",
+    link: "https://doday-nine.vercel.app/",
     type: "web",
   },
   {
