@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import profilePic from "../assets/profile.jpg";
@@ -10,6 +9,13 @@ const skills = [
   "HTML & CSS",
   "Node.js",
   "Git & GitHub",
+];
+
+const services = [
+  "Website fixes",
+  "Feature additions",
+  "Simple web apps",
+  "Bug fixing / deployment help",
 ];
 
 const About = () => {
@@ -31,14 +37,14 @@ const About = () => {
           Hi, I'm Silulami Simphiwe Mayaphi, a front-end developer passionate
           about building interactive, responsive, and visually appealing web
           applications. I also enjoy exploring data and extracting actionable
-          insights to inform smarter decisions.
+          insights to inform smarter decisions. I help small businesses and
+          founders fix, improve, or build simple websites and web apps — fast
+          and affordable.
         </p>
       </section>
 
-      {/* DOWNLOAD CV BUTTON + SOCIALS */}
+      {/* DOWNLOAD CV + SOCIALS */}
       <div className="flex flex-col items-center gap-6 mb-16 animate-fadeUp delay-500">
-
-        {/* Download CV */}
         <a
           href="/CV.pdf"
           download
@@ -49,13 +55,12 @@ const About = () => {
           Download CV
         </a>
 
-        {/* SOCIAL ICONS */}
         <div className="flex gap-6 text-3xl">
           <a
             href="https://github.com/Silulami-Mayaphi"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-black dark:text-neonWhite hover:text-cyan dark:hover:text-magenta transition"
+            className="hover:text-cyan dark:hover:text-magenta transition"
           >
             <FaGithub />
           </a>
@@ -63,7 +68,7 @@ const About = () => {
             href="https://www.linkedin.com/in/silulami-mayaphi-1790662b8"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-black dark:text-neonWhite hover:text-cyan dark:hover:text-magenta transition"
+            className="hover:text-cyan dark:hover:text-magenta transition"
           >
             <FaLinkedin />
           </a>
@@ -71,7 +76,7 @@ const About = () => {
             href="https://www.instagram.com/silulami.mayaphi_/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-black dark:text-neonWhite hover:text-cyan dark:hover:text-magenta transition"
+            className="hover:text-cyan dark:hover:text-magenta transition"
           >
             <FaInstagram />
           </a>
@@ -79,7 +84,7 @@ const About = () => {
             href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-black dark:text-neonWhite hover:text-cyan dark:hover:text-magenta transition"
+            className="hover:text-cyan dark:hover:text-magenta transition"
           >
             <FaFacebook />
           </a>
@@ -87,7 +92,7 @@ const About = () => {
       </div>
 
       {/* SKILLS SECTION */}
-      <section>
+      <section className="mb-20">
         <h2 className="text-3xl font-semibold text-center mb-8 animate-fadeUp delay-600">
           My Skills
         </h2>
@@ -106,6 +111,32 @@ const About = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section>
+        <h2 className="text-3xl font-semibold text-center mb-8 animate-fadeUp delay-700">
+          Services
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-6">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-[#001f3f] p-5 rounded-lg 
+              shadow-neon-cyan dark:shadow-neon-magenta 
+              hover:shadow-neon-cyan-soft dark:hover:shadow-neon-magenta-soft 
+              transition transform hover:-translate-y-1 animate-scaleUp"
+              style={{ animationDelay: `${0.3 + index * 0.2}s` }}
+            >
+              {service}
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-lg font-medium text-cyan dark:text-magenta animate-fadeUp delay-900">
+          Available for short-term projects
+        </p>
       </section>
     </div>
   );
